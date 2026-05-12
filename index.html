@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rwanda Economic Report 2024/2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Using OKLCH for perceptually accurate, vibrant blues */
+        :root {
+            --brand-deep: oklch(35% 0.12 250);
+            --brand-primary: oklch(65% 0.25 255);
+            --grid-line: rgba(255, 255, 255, 0.08);
+        }
+
+        .main-gradient {
+            background: linear-gradient(to bottom, var(--brand-deep), oklch(25% 0.1 260));
+        }
+
+        .blueprint-grid {
+            background-image: 
+                linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+        }
+
+        /* Recreating the 3D Coin Depth with CSS filters */
+        .coin-stack {
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+        }
+    </style>
+</head>
+<body class="main-gradient min-h-screen flex flex-col items-center justify-between py-12 px-6 text-white font-sans overflow-hidden relative">
+
+    <div class="absolute inset-0 blueprint-grid pointer-events-none"></div>
+
+    <header class="relative z-10 flex flex-col items-center text-center">
+        <div class="w-24 h-24 mb-6 bg-white rounded-full p-3 shadow-[0_0_40px_rgba(255,255,255,0.2)] border border-white/30">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Coat_of_arms_of_Rwanda.svg" alt="Republic of Rwanda" class="w-full h-full">
+        </div>
+        <p class="uppercase tracking-[0.3em] text-[10px] font-semibold opacity-80 mb-2">Republic of Rwanda</p>
+        <h2 class="text-xl font-bold leading-tight tracking-tight uppercase">
+            Ministry of Finance and <br> Economic Planning
+        </h2>
+    </header>
+
+    <main class="relative z-10 w-full max-w-xl group">
+        <div class="absolute -inset-6 border-2 border-white/20 rounded-4xl pointer-events-none">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-2 bg-inherit"></div>
+        </div>
+        
+        <div class="bg-[#0091ff] p-12 rounded-2xl shadow-[0_30px_100px_rgba(0,0,0,0.4)] border border-white/20 backdrop-blur-sm text-center">
+            <h1 class="text-5xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] mb-6 drop-shadow-md">
+                Annual <br> Economic <br> Report
+            </h1>
+            <div class="h-1 w-24 bg-white/40 mx-auto mb-6"></div>
+            <p class="text-lg font-bold tracking-[0.4em] opacity-90">
+                FISCAL YEAR 2024/2025
+            </p>
+        </div>
+    </main>
+
+    <footer class="relative z-10 w-full max-w-4xl h-48 opacity-50 flex items-end justify-center">
+        <svg viewBox="0 0 800 300" class="w-full h-full drop-shadow-2xl">
+            <path d="M 50 250 Q 200 240 400 150 T 750 30" fill="none" stroke="white" stroke-width="4" stroke-dasharray="10 5" class="animate-pulse" />
+            <path d="M 730 35 L 750 30 L 745 50" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" />
+            
+            <g class="coin-stack">
+                <ellipse cx="250" cy="220" rx="40" ry="12" fill="rgba(255,255,255,0.9)" />
+                <ellipse cx="250" cy="205" rx="40" ry="12" fill="rgba(255,255,255,0.7)" />
+                <ellipse cx="250" cy="190" rx="40" ry="12" fill="white" />
+                
+                <ellipse cx="400" cy="240" rx="50" ry="15" fill="rgba(255,255,255,0.9)" />
+                <ellipse cx="400" cy="220" rx="50" ry="15" fill="rgba(255,255,255,0.7)" />
+                <ellipse cx="400" cy="200" rx="50" ry="15" fill="white" />
+
+                <ellipse cx="550" cy="210" rx="45" ry="14" fill="rgba(255,255,255,0.9)" />
+                <ellipse cx="550" cy="190" rx="45" ry="14" fill="rgba(255,255,255,0.7)" />
+                <ellipse cx="550" cy="170" rx="45" ry="14" fill="white" />
+            </g>
+        </svg>
+    </footer>
+
+</body>
+</html>
